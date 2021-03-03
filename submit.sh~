@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for mass in 260 270 280 300 320 350 400 450
+do
+    sh runjobs2.sh $mass
+done
