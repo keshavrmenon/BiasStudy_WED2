@@ -4,16 +4,16 @@ source /cvmfs/cms.cern.ch/cmsset_default.sh
 sig=$1
 massY=$2
 icat=$3
-masses="260 270 280 300 320 350 400 450"
+masses="260, 270, 280, 300, 320, 350, 400, 450"
 
 truth=$4
 date="27_12_2020"
 datacard_folder="/afs/cern.ch/work/k/kmenon/CMSSW_10_2_13/src/BiasStudy_WED2"
 seed0=$5
 seed1=$6
-for massX in ${ echo ${masses}}
+for massX in ${ echo ${masses} | sed "s/,/ /g" }
 do
-    check=$(${massX}-${massY}-125)
+    check=$((${massX}-${massY}-125))
     echo ${check}
     if [ "${check}" -lt 0]; then
 	continue
