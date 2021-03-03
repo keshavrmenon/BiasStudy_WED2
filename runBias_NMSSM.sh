@@ -1,5 +1,5 @@
 #!/bin/bash
-source /cvmfs/cms.cern.ch/cmsset_default.sh
+#source /cvmfs/cms.cern.ch/cmsset_default.sh
 
 sig=$1
 massY=$2
@@ -11,11 +11,11 @@ date="27_12_2020"
 datacard_folder="/afs/cern.ch/work/k/kmenon/CMSSW_10_2_13/src/BiasStudy_WED2"
 seed0=$5
 seed1=$6
-for massX in ${ echo ${masses} | sed "s/,/ /g" }
+for massX in $(echo ${masses} | sed "s/,/ /g")
 do
     check=$((${massX}-${massY}-125))
     echo ${check}
-    if [ "${check}" -lt 0]; then
+    if [ "${check}" -lt 0 ]; then
 	continue
     fi
     datacard=cms_HHbbgg_datacard_${sig}_X${massX}_Y${massY}_${date}_2016_2017_2018

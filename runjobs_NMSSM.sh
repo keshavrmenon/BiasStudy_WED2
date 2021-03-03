@@ -10,7 +10,7 @@ do
 for iter in {0..3}
 do
         echo "source runBias_.sh Radion $mass $icat $pdfidx $(($s0+$iter)) $(($s1+$iter))"
-	sh runBias_.sh Radion $mass $icat $pdfidx $(($s0+$iter)) $(($s1+$iter))
+	sh runBias_NMSSM.sh NMSSM $mass $icat $pdfidx $(($s0+$iter)) $(($s1+$iter))
 done
 done
 done
